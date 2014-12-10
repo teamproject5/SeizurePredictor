@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Seizure Predictor</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!--Top Panel-->
+  <div id="topPan">
+  	<a href="index.html"><img src="images/logo.jpg" title="Sky High Industry" alt="Sky High Industry" width="245" height="39" border="0" /></a>
+	<ul>
+		<li class="company"></li>
+		<li><a href="http://54.68.146.189/SeizurePredictor/faq.html">FAQ</a></li>
+		<li><a href="http://54.68.146.189/SeizurePredictor/help.html">Help Page</a></li>
+		<li><a href="http://54.68.146.189/SeizurePredictor/contact.html">Contact Us</a></li>
+		<li><a href="http://54.68.146.189/SeizurePredictor/index.html">Home</a></li>
+	</ul>
+    <h1>The first predictor of its kind!<br /><span>The Seizure Predictor is your helping hand to forewarn when a seizure is about to hit.</span> </h1>
+  </div>
+  <!--Top Panel Close-->
+  <!--Main Middle Panel-->
+  <div id="mainmiddlePan">
+  <!--Middle Panel-->
+  <div id="middlePan">
+  <!--Middle Left Panel-->
+  <div id="middleleftPan">
+  	<h2>About Us</h2>
+	<p><span class="boldtext">The Seizure Predictor is an analysis software created to help patients know when a seizure is about to occur.</span> 
+	The software product has been tested using <a href="https://www.kaggle.com/c/seizure-prediction/data">Kaggle</a> real-world data taken from humans and dogs. </p>
+	<p>This software does not stop a seizure from occurring, but instead warns the patient that one is oncoming. This gives the patient adequate time to decrease the chances of 
+	having an injury or fatal event happen during a seizure.</p>
+	<p>If you are interested in learning more about seizures and epilepsy, you can click <a href="http://www.epilepsy.com/">here</a> for the latest information. </p>
+  </div>
+  <!--Middle Left Panel Close-->
+  
+    <div id="middlerightPan">
+     <form id="form1" name="form1" method="post" action="">
+	 	<h2>members login</h2>
+		<label>Patient ID:</label>
+		<input name="Your name" type="text" id="Yourname" />
+	<!--	<label>Password:</label>
+		<input name="password" type="password" id="Emailid" /> -->
+		<input name="login" onclick="myFunction()" type="button" class="button" value="Login" /> 
+	<!--	<button onclick="myFunction()">Login</button> -->
+     </form>
+    </div>
+   
+  </div>
+  <!--Middle Panel Close-->
+  </div>
+  <!--Main Middle Panel Close-->
+<div id="footermainPan">
+  <div id="footerPan">
+  	<ul>
+  	<li></li>
+  	<li></li>
+  	<li><li>
+  	<li></li>
+  	<li></li>
+  </ul>
+  <p class="copyright">San Jose State University 2014</p>
+   <ul class="templateworld">
+  	<li>Design By:</li>
+	<li><a href="http://www.templateworld.com" target="_blank">Template World</a></li>
+  </ul>
+  </div>
+</div>
+
+<script>
+function myFunction() {
+    var id = document.getElementById("Yourname").value;
+
+    window.location = "http://54.68.146.189/SeizurePredictor/" + id;
+}
+</script>
+
+
+</body>
+</html>

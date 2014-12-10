@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Seizure Predictor</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="getUserID();getPrediction();">
+  <!--Top Panel-->
+  <div id="topPan">
+  	<a href="index.html"><img src="images/logo.jpg" title="Sky High Industry" alt="Sky High Industry" width="245" height="39" border="0" /></a>
+	<ul>
+		<li class="company"></li>
+		<li></li>
+		<li></li>
+		<li><a href="./seizurePrediction.png" target="_blank">EEG Graphs</a></li>
+		<li><a href="http://54.68.146.189/SeizurePredictor/index.html">Log Out</a></li>
+	</ul>
+    <h1>The first predictor of its kind!<br /><span>The Seizure Predictor is your helping hand to forewarn when a seizure is about to occur.</span> </h1>
+  </div>
+  <!--Top Panel Close-->
+  <!--Main Middle Panel-->
+  <div id="mainmiddlePan">
+  <!--Middle Panel-->
+  <div id="middlePan">
+  <!--Middle Left Panel-->
+  <div id="middleleftPan2">
+  	<h2 id="patientid"></h2>
+	<p><span class="boldtext">You have reached your Seizure Predictor online account.</span></p>
+	<p>From this page you will be able to review both the prediction and graphical representation of the data being analyzed.</p>
+	
+	
+	  <h2 id="result"></h2>
+	
+  </div>
+  <!--Middle Left Panel Close-->
+  
+
+   
+  </div>
+  <!--Middle Panel Close-->
+  </div>
+  <!--Main Middle Panel Close-->
+<div id="footermainPan">
+  <div id="footerPan">
+  	<ul>
+  	<li></li>
+  	<li></li>
+  	<li></li>
+  	<li></li>
+  	<li></li>
+  </ul>
+  <p class="copyright">San Jose State University 2014</p>
+  <ul>
+  	<li>Design By:</li>
+	<li><a href="http://www.templateworld.com" target="_blank">Template World</a></li>
+  </ul>
+  </div>
+</div>
+
+
+<script>
+function getUserID() {
+	var urlChunks = location.href.split('/');
+	//alert(urlChunks[urlChunks.length - 2]);
+	
+	document.getElementById("patientid").innerHTML = "Welcome Patient # " + urlChunks[urlChunks.length - 2];
+}
+</script>
+
+
+
+<script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+<script>
+function getPrediction() { 
+  
+    $.getJSON("./result/result.json", function(data) {
+ 
+    var output="";
+    for(var i in data.patients) {
+        output += data.patients[i].result ;
+    }
+
+    if(String(output) == String("Seizure!")) {
+        $("body").css('background-color', 'red');
+    }else if(String(output) == String("Warning")) {
+	$("body").css('background-color', 'orange');
+    }else if(String(output) == String("Ok")) {
+        $("body").css('background-color', 'green');
+    }else {
+        $("body").css('background-color', 'blue');
+    }      
+
+    output+="";
+
+    document.getElementById("result").innerHTML = "Your current brain activity status: " + output;
+	
+   });
+
+}
+
+
+</script>
+
+
+</body>
+</html>
